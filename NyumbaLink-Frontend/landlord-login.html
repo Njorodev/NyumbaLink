@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Landlord Login | NyumbaLink</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="auth.css" />
+</head>
+
+<body>
+    <header class="auth-header">
+        <div class="container auth-nav">
+            <a class="brand" href="index.html">
+                <span class="brand-icon">
+                    <img src="assets/home.png" alt="Home">
+                </span>
+                <span>Nyumba<span>Link</span></span></a><a class="back-link" href="index.html">← Back to home</a>
+        </div>
+    </header>
+    <main class="auth-main">
+        <div class="auth-layout container">
+            <section class="auth-intro">
+                <p class="eyebrow">LANDLORD PORTAL</p>
+                <h1>Welcome back.</h1>
+                <p>
+                    Sign in to manage your NyumbaLink listings, update property details
+                    and connect with interested seekers.
+                </p>
+            </section>
+            <section class="auth-card">
+                <div class="role-switch">
+                    <a class="active" href="landlord-login.html">Landlord</a><a href="seeker-login.html">Seeker</a>
+                </div>
+                <h2>Landlord sign in</h2>
+                <p class="sub">
+                    Use the phone number or email connected to your account.
+                </p>
+                <form class="auth-form"
+                    data-message="Sign-in form submitted. Connect this form to your authentication backend.">
+                    <div class="success"></div>
+                    <div class="field">
+                        <label for="email">Email or phone number</label><input id="email" required />
+                    </div>
+                    <div class="field password-row">
+                        <label for="password">Password</label><input id="password" type="password" required /><button
+                            type="button" class="toggle-password" data-target="password">
+                            Show
+                        </button>
+                    </div>
+                    <div class="check-row">
+                        <label><input type="checkbox" /> Remember me</label><a href="#" onclick="
+                  alert('Connect this link to your password-reset flow.');
+                  return false;
+                ">Forgot password?</a>
+                    </div>
+                    <button class="auth-btn">Sign in</button>
+                    <p class="auth-switch">
+                        New to NyumbaLink?
+                        <a href="landlord-signup.html">Create account</a>
+                    </p>
+                </form>
+            </section>
+        </div>
+    </main>
+    <script src="auth.js"></script>
+</body>
+
+</html>

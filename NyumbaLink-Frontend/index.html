@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NyumbaLink — affordable houses and land anywhere in Kenya.">
+  <title>NyumbaLink | Houses & Land in Kenya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav container">
+      <a href="#" class="brand" aria-label="NyumbaLink home">
+        <span class="brand-icon">
+            <img src="assets/home.png" alt="Home">
+        </span>
+        <span>Nyumba<span>Link</span></span>
+      </a>
+      <button class="post-top" onclick="openPostModal()">Post property</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">FIND YOUR NEXT HOME</p>
+          <h1>Affordable houses and land, anywhere in Kenya</h1>
+          <p class="hero-text">
+            NyumbaLink connects house seekers and land buyers directly with landlords —
+            no endless agent fees, just honest listings by county and town.
+          </p>
+        </div>
+
+        <form class="search-card" id="searchForm">
+          <label>
+            <span class="sr-only">County</span>
+            <select id="county">
+              <option value="">All counties</option>
+              <option>Nairobi</option>
+              <option>Kiambu</option>
+              <option>Mombasa</option>
+              <option>Nakuru</option>
+              <option>Uasin Gishu</option>
+              <option>Kajiado</option>
+            </select>
+          </label>
+
+          <label>
+            <span class="sr-only">Town</span>
+            <select id="town" disabled>
+              <option value="">All towns</option>
+            </select>
+          </label>
+
+          <label>
+            <span class="sr-only">Property type</span>
+            <select id="type">
+              <option value="">Any type</option>
+              <option>Bed-sitter</option>
+              <option>1 bedroom</option>
+              <option>2 bedroom</option>
+              <option>3 bedroom</option>
+              <option>Plot / land</option>
+            </select>
+          </label>
+
+          <div class="purpose" role="group" aria-label="Search purpose">
+            <button type="button" class="purpose-btn active" data-purpose="rent">Rent</button>
+            <button type="button" class="purpose-btn" data-purpose="land">Buy land</button>
+          </div>
+
+          <button class="search-btn" type="submit"><span>⌕</span> Search</button>
+          <p class="search-message" id="searchMessage"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="benefits container">
+      <article class="benefit">
+        <div class="benefit-icon">
+            <img src="assets/wallet.png" alt="Wallet">
+        </div>
+        <div><h3>Budget friendly</h3><p>Filter by your maximum monthly rent or plot price.</p></div>
+      </article>
+      <article class="benefit">
+        <div class="benefit-icon">
+            <img src="assets/location.png" alt="Location">
+        </div>
+        <div><h3>County & town search</h3><p>From Kilimani to Kitengela, Nyali to Eldoret.</p></div>
+      </article>
+      <article class="benefit">
+        <div class="benefit-icon">
+            <img src="assets/guarantee.png" alt="Guarantee">
+        </div>
+        <div><h3>Direct to landlord</h3><p>Call the owner straight from the listing page.</p></div>
+      </article>
+    </section>
+
+    <section class="latest" id="latest">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Latest properties</h2>
+          <button class="text-link" onclick="showAll()">View all</button>
+        </div>
+        <div id="propertyGrid" class="property-grid">
+          <div class="empty-state">
+            <p>No properties listed yet. Be the first landlord.</p>
+            <button class="green-btn" onclick="openPostModal()">Post a property</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="landlord-section">
+      <div class="container">
+        <div class="landlord-card">
+          <div class="landlord-copy">
+            <p class="eyebrow light">FOR LANDLORDS & LAND SELLERS</p>
+            <h2>Have a house or land to sell?</h2>
+            <p>
+              Create a free landlord account, upload photos of your house or plot,
+              and reach thousands of Kenyans searching in your area every week.
+            </p>
+            <div class="cta-row">
+              <button class="green-btn" onclick="openPostModal()">Start listing free</button>
+              <button class="outline-btn" onclick="showAll()">Browse properties</button>
+            </div>
+          </div>
+          <div class="quick-points">
+            <div>
+                <img src="assets/home.png" alt="Home">
+                <span>Bedsitters from KES 6,000</span>
+            </div>
+            <div>
+                <img src="assets/home.png" alt="Home">
+                <span>1–3 bedroom family homes</span>
+            </div>
+            <div>
+                <img src="assets/home.png" alt="Home">
+                <span>Plots from 1/8 acre</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about">
+      <div class="container about-inner">
+        <div class="about-brand">
+          <a href="#" class="brand">
+            <span class="brand-icon">
+              <img src="assets/home.png" alt="Home">
+            </span>
+            <span>Nyumba<span>Link</span></span>
+          </a>
+          <p>Affordable houses and land for every Kenyan — search by county, town and property type.</p>
+        </div>
+
+        <div class="about-links">
+          <div class="about-column">
+            <h3>POPULAR AREAS</h3>
+            <a href="#" onclick="filterArea('Ruaka'); return false;">Ruaka</a>
+            <a href="#" onclick="filterArea('Kitengela'); return false;">Kitengela</a>
+            <a href="#" onclick="filterArea('Syokimau'); return false;">Syokimau</a>
+            <a href="#" onclick="filterArea('Nyali'); return false;">Nyali</a>
+          </div>
+
+          <div class="about-column">
+            <h3>PLATFORM</h3>
+            <a href="landlord-signup.html">Landlord sign up</a>
+            <a href="seeker-signup.html">Seeker sign up</a>
+            <a href="#latest" onclick="showAll(); return false;">Browse listings</a>
+            <a href="seeker-login.html">Sign in</a>
+            <a href="#" onclick="openFaqModal(); return false;">FAQ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2026 NyumbaLink. Find your place.</div>
+  </footer>
+
+  <div class="modal-backdrop" id="modal">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close" onclick="closePostModal()" aria-label="Close">×</button>
+      <h2 id="modalTitle">Post a property</h2>
+      <p>Tell us about the property you want to list.</p>
+      <form onsubmit="submitListing(event)">
+        <input required placeholder="Property title">
+        <select required><option value="">Property type</option><option>Bed-sitter</option><option>1 bedroom</option><option>2 bedroom</option><option>3 bedroom</option><option>Plot / land</option></select>
+        <input required placeholder="Town / area">
+        <input required placeholder="Price (KES)" type="number" min="0">
+        <button class="green-btn" type="submit">Continue</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="faqModal">
+    <div class="modal faq-modal" role="dialog" aria-modal="true" aria-labelledby="faqTitle">
+      <button class="close" onclick="closeFaqModal()" aria-label="Close">×</button>
+      <div class="faq-heading">
+        <p class="eyebrow faq-eyebrow">NYUMBALINK FAQ</p>
+        <h2 id="faqTitle">Frequently asked questions</h2>
+        <p>Quick answers to common questions about finding and listing property on NyumbaLink.</p>
+      </div>
+      <div class="faq-list">
+        <details><summary>What is NyumbaLink?</summary><p>NyumbaLink is a property platform that helps people find affordable houses and land directly in their preferred county or town.</p></details>
+        <details><summary>Can I search for houses by town?</summary><p>Yes. Choose a county first, then select an available town or area to narrow your search.</p></details>
+        <details><summary>Can I search for land too?</summary><p>Yes. Select “Buy land” in the search panel and choose the property type that fits your needs.</p></details>
+        <details><summary>Do I have to pay an agent to find a property?</summary><p>NyumbaLink is designed to help seekers connect directly with landlords and property sellers, reducing unnecessary agent fees.</p></details>
+        <details><summary>How do I post a property?</summary><p>Click “Post property” or “Landlord sign up”, enter the property details, and continue through the listing process.</p></details>
+        <details><summary>How much does it cost to list a property?</summary><p>The current starter listing flow is free. Any premium listing options can be added later as the platform grows.</p></details>
+        <details><summary>How do I contact a landlord?</summary><p>Open a property listing and use the contact details provided by the landlord or seller.</p></details>
+        <details><summary>Can I browse properties without an account?</summary><p>Yes. Property browsing and searching can be available without signing in. An account is useful when you want to list or manage properties.</p></details>
+        <details><summary>Which areas does NyumbaLink cover?</summary><p>NyumbaLink is designed for properties across Kenya, with searches organized by county, town and area.</p></details>
+        <details><summary>Is NyumbaLink available on phones?</summary><p>Yes. The website is responsive and is designed to work comfortably on phones, tablets and laptop screens.</p></details>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

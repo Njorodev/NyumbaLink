@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Seeker Sign Up | NyumbaLink</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="auth.css">
+</head>
+
+<body>
+    <header class="auth-header">
+        <div class="container auth-nav"><a class="brand" href="index.html">
+                <span class="brand-icon">
+                    <img src="assets/home.png" alt="Home">
+                </span>
+            <span>Nyumba<span>Link</span></span></a><a class="back-link"
+                href="index.html">← Back to home</a></div>
+    </header>
+    <main class="auth-main">
+        <div class="auth-layout container">
+            <section class="auth-intro">
+                <p class="eyebrow">FOR HOUSE & LAND SEEKERS</p>
+                <h1>Find a place that fits your life.</h1>
+                <p>Create a free seeker account to save your preferences and make it easier to find houses and land
+                    across Kenya.</p>
+                <div class="role-points">
+                    <div><span>✓</span> Search homes by county and town</div>
+                    <div><span>✓</span> Keep your property preferences</div>
+                    <div><span>✓</span> Contact landlords and sellers</div>
+                </div>
+            </section>
+            <section class="auth-card">
+                <div class="role-switch"><a href="landlord-signup.html">Landlord</a><a class="active"
+                        href="seeker-signup.html">Seeker</a></div>
+                <h2>Create seeker account</h2>
+                <p class="sub">Start your property search with a free account.</p>
+                <form class="auth-form"
+                    data-message="Account details captured. Connect this form to your backend to create the seeker account.">
+                    <div class="success"></div>
+                    <div class="two-fields">
+                        <div class="field"><label for="fname">First name</label><input id="fname" required></div>
+                        <div class="field"><label for="lname">Last name</label><input id="lname" required></div>
+                    </div>
+                    <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel"
+                            placeholder="07XX XXX XXX" required></div>
+                    <div class="field"><label for="email">Email address</label><input id="email" type="email" required>
+                    </div>
+                    <div class="field password-row"><label for="password">Password</label><input id="password"
+                            type="password" minlength="8" required><button type="button" class="toggle-password"
+                            data-target="password">Show</button></div>
+                    <div class="field password-row"><label for="confirm">Confirm password</label><input id="confirm"
+                            type="password" minlength="8" required><button type="button" class="toggle-password"
+                            data-target="confirm">Show</button></div>
+                    <div class="check-row"><label><input type="checkbox" required> I agree to the terms</label></div>
+                    <button class="auth-btn">Create seeker account</button>
+                    <p class="auth-switch">Already have an account? <a href="seeker-login.html">Sign in</a></p>
+                    <p class="legal">By creating an account, you agree to use NyumbaLink responsibly.</p>
+                </form>
+            </section>
+        </div>
+    </main>
+    <script src="auth.js"></script>
+</body>
+
+</html>
