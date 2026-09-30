@@ -111,8 +111,8 @@ async function loadProperties(filters = {}) {
 
   const queryString = params.toString();
   const endpoint = queryString
-    ? `${API_BASE}/api/properties?${queryString}`
-    : `${API_BASE}/api/properties`;
+    ? `${API_API}/api/properties?${queryString}`
+    : `${API_API}/api/properties`;
 
   try {
     const response = await fetch(endpoint, {
