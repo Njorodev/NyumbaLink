@@ -7,3 +7,305 @@
 .benefit-icon img { width: 1em; height: 1em; object-fit: contain; display: inline-block; vertical-align: middle; filter: brightness(0) saturate(100%) invert(52%) sepia(97%) saturate(1664%) hue-rotate(73deg) brightness(97%) contrast(104%) drop-shadow(0 0 0.7px #12BC00) drop-shadow(0 0 0.7px #12BC00);}
 @media(max-width:800px){.container{width:calc(100% - 30px)}.auth-main{padding:32px 0}.auth-layout{grid-template-columns:1fr;gap:25px}.auth-intro{padding:0;text-align:center}.auth-intro>p{margin-left:auto;margin-right:auto}.role-points{display:none}.auth-card{padding:25px;border-radius:23px}.auth-header{height:74px}.brand{font-size:22px}.brand-icon{width:43px;height:43px;border-radius:14px;font-size:24px}.back-link{font-size:12px}}
 @media(max-width:460px){.two-fields{grid-template-columns:1fr}.auth-card{padding:21px}.auth-intro h1{font-size:35px}.auth-intro>p{font-size:15px}.auth-main{padding:25px 0}}
+/* =========================================================
+   POST PROPERTY MODAL
+   ========================================================= */
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    z-index: 9999;
+}
+
+.modal-backdrop.open {
+    display: flex;
+}
+
+.modal {
+    position: relative;
+
+    width: 560px;
+    max-width: calc(100vw - 40px);
+
+    max-height: calc(100vh - 40px);
+    max-height: calc(100dvh - 40px);
+
+    min-width: 0;
+
+    margin: auto;
+
+    background: #fff;
+
+    border-radius: 16px;
+
+    padding: 28px;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Close button */
+
+.modal .close {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 36px;
+    height: 36px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: #f1f3f7;
+
+    color: #333;
+
+    font-size: 24px;
+    line-height: 36px;
+
+    cursor: pointer;
+
+    display: grid;
+    place-items: center;
+}
+
+.modal .close:hover {
+    background: #e5e8ee;
+}
+
+/* Modal heading */
+
+.modal h2 {
+    margin: 0 45px 8px 0;
+
+    color: var(--ink);
+
+    font-size: 26px;
+}
+
+.modal > p {
+    margin: 0 0 22px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+/* Form */
+
+.modal form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.modal form label {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    color: var(--ink);
+}
+
+.modal form input,
+.modal form select,
+.modal form textarea {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+
+    box-sizing: border-box;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: #fff;
+
+    color: var(--ink);
+
+    padding: 11px 13px;
+
+    outline: none;
+}
+
+.modal form input,
+.modal form select {
+    height: 48px;
+}
+
+.modal form textarea {
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+.modal form input:focus,
+.modal form select:focus,
+.modal form textarea:focus {
+    border-color: var(--blue);
+
+    box-shadow: 0 0 0 3px rgba(23, 57, 143, 0.1);
+}
+
+.modal form button[type="submit"] {
+    width: 100%;
+
+    min-height: 50px;
+
+    margin-top: 8px;
+
+    border: 0;
+    border-radius: 12px;
+
+    background: var(--green);
+
+    color: #fff;
+
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.modal form button[type="submit"]:hover {
+    background: var(--green-dark);
+}
+
+
+/* =========================================================
+   PROPERTY CARD IMAGES
+   ========================================================= */
+
+.property-card {
+    overflow: hidden;
+}
+
+.property-image {
+    display: block;
+
+    width: 100%;
+    max-width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: #f5f5f5;
+}
+
+
+/* =========================================================
+   MOBILE MODAL
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .modal-backdrop {
+        align-items: flex-start;
+
+        justify-content: center;
+
+        padding: 10px;
+
+        overflow-y: auto;
+    }
+
+    .modal {
+        width: calc(100vw - 20px);
+
+        max-width: calc(100vw - 20px);
+
+        max-height: calc(100vh - 20px);
+        max-height: calc(100dvh - 20px);
+
+        margin: 0 auto;
+
+        padding: 22px 18px 24px;
+
+        border-radius: 14px;
+    }
+
+    .modal h2 {
+        font-size: 22px;
+    }
+
+    .modal > p {
+        font-size: 13px;
+    }
+
+    .modal .close {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .modal-backdrop {
+        padding: 6px;
+    }
+
+    .modal {
+        width: calc(100vw - 12px);
+
+        max-width: calc(100vw - 12px);
+
+        max-height: calc(100vh - 12px);
+        max-height: calc(100dvh - 12px);
+
+        padding: 20px 15px 20px;
+    }
+
+    .modal h2 {
+        font-size: 20px;
+    }
+
+    .modal form input,
+    .modal form select {
+        height: 46px;
+    }
+}

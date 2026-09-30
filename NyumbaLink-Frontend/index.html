@@ -193,13 +193,81 @@
       <button class="close" onclick="closePostModal()" aria-label="Close">×</button>
       <h2 id="modalTitle">Post a property</h2>
       <p>Tell us about the property you want to list.</p>
-      <form onsubmit="submitListing(event)">
-        <input required placeholder="Property title">
-        <select required><option value="">Property type</option><option>Bed-sitter</option><option>1 bedroom</option><option>2 bedroom</option><option>3 bedroom</option><option>Plot / land</option></select>
-        <input required placeholder="Town / area">
-        <input required placeholder="Price (KES)" type="number" min="0">
-        <button class="green-btn" type="submit">Continue</button>
-      </form>
+        <form id="listingForm" onsubmit="submitListing(event)">
+          <label for="listingTitle">Property title</label>
+          <input
+            id="listingTitle"
+            name="title"
+            required
+            placeholder="e.g. Spacious 2 Bedroom Apartment"
+            type="text"
+          >
+
+          <label for="listingType">Property type</label>
+          <select id="listingType" name="property_type" required>
+            <option value="">Property type</option>
+            <option value="Bed-sitter">Bed-sitter</option>
+            <option value="1 bedroom">1 bedroom</option>
+            <option value="2 bedroom">2 bedroom</option>
+            <option value="3 bedroom">3 bedroom</option>
+            <option value="Plot / land">Plot / land</option>
+          </select>
+
+          <label for="listingPurpose">Purpose</label>
+          <select id="listingPurpose" name="purpose" required>
+            <option value="">Select purpose</option>
+            <option value="rent">Rent</option>
+            <option value="land">Buy land</option>
+          </select>
+
+          <label for="listingCounty">County</label>
+          <select id="listingCounty" name="county" required>
+            <option value="">Select county</option>
+            <option value="Nairobi">Nairobi</option>
+            <option value="Kiambu">Kiambu</option>
+            <option value="Mombasa">Mombasa</option>
+            <option value="Nakuru">Nakuru</option>
+            <option value="Uasin Gishu">Uasin Gishu</option>
+            <option value="Kajiado">Kajiado</option>
+          </select>
+
+          <label for="listingTown">Town / area</label>
+          <input
+            id="listingTown"
+            name="town"
+            required
+            placeholder="e.g. Kilimani"
+            type="text"
+          >
+
+          <label for="listingPrice">Price in KES</label>
+          <input
+            id="listingPrice"
+            name="price"
+            required
+            placeholder="e.g. 15000"
+            type="number"
+            min="1"
+          >
+
+          <label for="listingDescription">Description</label>
+          <textarea
+            id="listingDescription"
+            name="description"
+            placeholder="Describe the property"
+            rows="4"
+          ></textarea>
+
+          <label for="listingImage">Image URL</label>
+          <input
+            id="listingImage"
+            name="image_url"
+            placeholder="Optional image URL"
+            type="url"
+          >
+
+          <button class="green-btn" type="submit">Publish property</button>
+        </form>
     </div>
   </div>
 

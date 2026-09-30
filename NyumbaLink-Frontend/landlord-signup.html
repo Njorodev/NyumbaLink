@@ -38,30 +38,115 @@
                         href="seeker-signup.html">Seeker</a></div>
                 <h2>Create landlord account</h2>
                 <p class="sub">It only takes a few minutes to get started.</p>
-                <form class="auth-form"
-                    data-message="Account details captured. Connect this form to your backend to create the landlord account.">
+                <form
+                    class="auth-form"
+                    data-mode="signup"
+                    data-role="landlord"
+                >
                     <div class="success"></div>
+                    <div class="error"></div>
+
                     <div class="two-fields">
-                        <div class="field"><label for="fname">First name</label><input id="fname" required></div>
-                        <div class="field"><label for="lname">Last name</label><input id="lname" required></div>
+                        <div class="field">
+                            <label for="fname">First name</label>
+                            <input
+                                id="fname"
+                                name="first_name"
+                                type="text"
+                                required
+                            >
+                        </div>
+
+                        <div class="field">
+                            <label for="lname">Last name</label>
+                            <input
+                                id="lname"
+                                name="last_name"
+                                type="text"
+                                required
+                            >
+                        </div>
                     </div>
-                    <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel"
-                            placeholder="07XX XXX XXX" required></div>
-                    <div class="field"><label for="email">Email address</label><input id="email" type="email" required>
+
+                    <div class="field">
+                        <label for="phone">Phone number</label>
+                        <input
+                            id="phone"
+                            name="phone"
+                            type="tel"
+                            placeholder="07XX XXX XXX"
+                            required
+                        >
                     </div>
-                    <div class="field password-row"><label for="password">Password</label><input id="password"
-                            type="password" minlength="8" required><button type="button" class="toggle-password"
-                            data-target="password">Show</button></div>
-                    <div class="field password-row"><label for="confirm">Confirm password</label><input id="confirm"
-                            type="password" minlength="8" required><button type="button" class="toggle-password"
-                            data-target="confirm">Show</button></div>
-                    <div class="check-row"><label><input type="checkbox" required> I agree to the terms</label></div>
-                    <button class="auth-btn">Create landlord account</button>
-                    <p class="auth-switch">Already have an account? <a href="landlord-login.html">Sign in</a></p>
-                    <p class="legal">By creating an account, you agree to use NyumbaLink responsibly and provide
-                        accurate property information.</p>
+
+                    <div class="field">
+                        <label for="email">Email address</label>
+                        <input
+                            id="email"
+                            name="email"
+                            type="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="field password-row">
+                        <label for="password">Password</label>
+                        <input
+                            id="password"
+                            name="password"
+                            type="password"
+                            minlength="8"
+                            required
+                        >
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            data-target="password"
+                        >
+                            Show
+                        </button>
+                    </div>
+
+                    <div class="field password-row">
+                        <label for="confirm">Confirm password</label>
+                        <input
+                            id="confirm"
+                            name="confirm_password"
+                            type="password"
+                            minlength="8"
+                            required
+                        >
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            data-target="confirm"
+                        >
+                            Show
+                        </button>
+                    </div>
+
+                    <div class="check-row">
+                        <label>
+                            <input type="checkbox" required>
+                            I agree to the terms
+                        </label>
+                    </div>
+
+                    <button type="submit" class="auth-btn">
+                        Create landlord account
+                    </button>
+
+                    <p class="auth-switch">
+                        Already have an account?
+                        <a href="landlord-login.html">Sign in</a>
+                    </p>
+
+                    <p class="legal">
+                        By creating an account, you agree to use NyumbaLink responsibly
+                        and provide accurate property information.
+                    </p>
                 </form>
-            </section>
+                            </section>
         </div>
     </main>
     <script src="auth.js"></script>
