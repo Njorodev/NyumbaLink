@@ -12,63 +12,54 @@
    ========================================================= */
 
 .modal-backdrop {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
 
-    width: 100%;
-    height: 100vh;
-    height: 100dvh;
+  background: rgba(7, 15, 37, 0.55);
 
-    background: rgba(0, 0, 0, 0.55);
+  display: none;
 
-    display: none;
+  /* Important: don't center a modal taller than the screen */
+  padding: 20px;
 
-    align-items: center;
-    justify-content: center;
+  box-sizing: border-box;
 
-    padding: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
 
-    overflow-y: auto;
-    overflow-x: hidden;
-
-    z-index: 9999;
+  z-index: 9999;
 }
+
 
 .modal-backdrop.open {
     display: flex;
 }
 
-.modal {
-    position: relative;
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
 
-    width: 560px;
-    max-width: calc(100vw - 40px);
+  background: rgba(7, 15, 37, 0.55);
 
-    max-height: calc(100vh - 40px);
-    max-height: calc(100dvh - 40px);
+  display: none;
 
-    min-width: 0;
+  /* Important: don't center a modal taller than the screen */
+  padding: 20px;
 
-    margin: auto;
+  box-sizing: border-box;
 
-    background: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
 
-    border-radius: 16px;
-
-    padding: 28px;
-
-    box-sizing: border-box;
-
-    overflow-x: hidden;
-    overflow-y: auto;
-
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-
-    -webkit-overflow-scrolling: touch;
+  z-index: 9999;
 }
+
 
 /* Close button */
 
@@ -105,9 +96,7 @@
 
 .modal h2 {
     margin: 0 45px 8px 0;
-
     color: var(--ink);
-
     font-size: 26px;
 }
 
@@ -125,10 +114,8 @@
 
 .modal form {
     width: 100%;
-
-    display: flex;
+    display: grid;
     flex-direction: column;
-
     gap: 12px;
 }
 
@@ -168,15 +155,12 @@
 
 .modal form input,
 .modal form select {
-    height: 48px;
+    height: 4px;
 }
 
 .modal form textarea {
     min-height: 110px;
-
-    resize: vertical;
 }
-
 .modal form input:focus,
 .modal form select:focus,
 .modal form textarea:focus {

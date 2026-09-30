@@ -36,50 +36,141 @@ styles.add(ParagraphStyle(
 ))
 
 sections = [
-("1. Introduction",
-"""These Terms and Conditions govern your use of the NyumbaLink platform, website and related services operated by NyumbaLink Limited (“NyumbaLink”, “we”, “us” or “our”). By accessing or using the platform, you agree to comply with these Terms and Conditions. If you do not agree with them, please do not use the platform."""),
-("2. About NyumbaLink",
-"""NyumbaLink is a property platform designed to help people search for houses, land and other property opportunities across Kenya. The platform organizes searches by county, town and area and is intended to facilitate connections between property seekers, landlords and property sellers."""),
-("3. Eligibility",
-"""You must provide accurate information when creating an account or submitting a property listing. By using NyumbaLink, you confirm that you are legally capable of entering into agreements applicable to your use of the platform. Where an account is created on behalf of another person or organization, you must have authority to do so."""),
-("4. Property Listings",
-"""Landlords, sellers and other listing users are responsible for ensuring that all information they submit is accurate, current and not misleading. This includes property descriptions, location, rental or sale price, availability, ownership-related information, photographs and contact details."""),
-("5. Verification and Accuracy",
-"""NyumbaLink may review, moderate, remove or request clarification about listings, but we do not guarantee that every listing, property, landlord, seller, photograph, price, ownership claim or other information is accurate, genuine, available or legally compliant. Users should independently verify property information and ownership before making payments or entering into agreements."""),
-("6. Direct Transactions",
-"""NyumbaLink is intended to help property seekers connect directly with landlords and sellers. NyumbaLink is not a party to any tenancy, sale, lease, deposit, agency, management or other agreement between users unless expressly stated otherwise. Any transaction entered into by users is undertaken at their own risk and responsibility."""),
-("7. Payments and Fees",
-"""The standard starter property listing flow is currently free unless a different fee is clearly displayed or communicated by NyumbaLink. NyumbaLink may introduce premium listings, promotional services or other paid features in the future. Applicable charges, payment terms and refund conditions will be communicated before a paid service is used."""),
-("8. User Accounts and Security",
-"""Where accounts are provided, users are responsible for keeping their login information secure and for all activity conducted through their account. You should notify NyumbaLink promptly if you believe your account has been accessed without authorization. NyumbaLink may suspend or terminate accounts that violate these Terms or create risks for other users or the platform."""),
-("9. Prohibited Use",
-"""Users must not use NyumbaLink to publish fraudulent, deceptive, defamatory, unlawful, discriminatory or abusive content; impersonate another person; misrepresent ownership or authority over a property; upload malicious software; interfere with the operation of the platform; harvest personal information without authorization; or use the platform for any unlawful purpose."""),
-("10. Communications and Contact Details",
-"""Users may contact landlords or sellers using the contact information supplied in a listing. Users should exercise appropriate caution when communicating with unknown persons and should not send money or disclose sensitive information solely because a person or property appears on NyumbaLink."""),
-("11. Third-Party Services and Links",
-"""NyumbaLink may contain links, integrations or references to third-party websites, payment services, communication services or other resources. Such third-party services are governed by their own terms and policies. NyumbaLink is not responsible for the availability, content, security or practices of third-party services."""),
-("12. Intellectual Property",
-"""The NyumbaLink name, branding, logos, website design, software, text, graphics and other platform materials may be protected by intellectual property laws. Except as permitted by law or expressly authorized by NyumbaLink, users must not copy, reproduce, modify, distribute, sell or commercially exploit NyumbaLink materials."""),
-("13. User-Submitted Content",
-"""By submitting property photographs, descriptions or other content to NyumbaLink, you confirm that you have the necessary rights or permission to provide that content. You grant NyumbaLink a non-exclusive permission to host, display, reproduce and use the content as reasonably necessary to operate, promote and improve the platform, subject to applicable law."""),
-("14. Privacy",
-"""NyumbaLink may collect and process information necessary to operate the platform, including account, listing and communication information. Personal information will be handled in accordance with NyumbaLink’s applicable Privacy Policy and Kenyan data-protection requirements. Users should review the Privacy Policy for further information about collection, use, storage and disclosure of personal information."""),
-("15. Disclaimer",
-"""NyumbaLink provides a marketplace and information service. To the extent permitted by applicable law, we do not guarantee uninterrupted availability of the platform or the accuracy, completeness, suitability, safety or legality of any property listing or user. A listing on NyumbaLink should not be treated as a guarantee, certification, valuation, inspection, title confirmation or legal advice."""),
-("16. Limitation of Liability",
-"""To the maximum extent permitted by applicable law, NyumbaLink Limited will not be liable for losses arising from transactions, communications or agreements between users, fraudulent conduct by users, inaccurate listings supplied by users, inability to access a property, loss of data, service interruptions or other indirect or consequential losses arising from use of the platform. Nothing in these Terms excludes liability that cannot lawfully be excluded."""),
-("17. Indemnity",
-"""To the extent permitted by law, users agree to indemnify and hold NyumbaLink Limited harmless from claims, losses, liabilities, costs or expenses arising from their unlawful use of the platform, violation of these Terms, infringement of another person's rights, or inaccurate or fraudulent information submitted by them."""),
-("18. Suspension and Termination",
-"""NyumbaLink may remove a listing, restrict access, suspend an account or terminate platform access where reasonably necessary, including where a user violates these Terms, provides misleading information, engages in suspected fraud or creates a risk to other users or the platform."""),
-("19. Changes to These Terms",
-"""NyumbaLink may update these Terms and Conditions from time to time as the platform develops or legal requirements change. Updated terms will take effect when published through the platform unless a different effective date is stated. Continued use of NyumbaLink after an update constitutes acceptance of the revised terms."""),
-("20. Governing Law and Disputes",
-"""These Terms and Conditions are intended to be governed by the laws of Kenya. Users should first attempt to resolve disputes with NyumbaLink through good-faith communication. Where a dispute cannot be resolved informally, it may be referred to the appropriate courts or dispute-resolution mechanism with jurisdiction in Kenya, subject to applicable law."""),
-("21. Contact",
-"""For questions concerning these Terms and Conditions, platform use, listings or complaints, please contact NyumbaLink Limited through the official contact details published on the NyumbaLink platform."""),
-]
+    (
+        "1. Introduction and Acceptance",
+        """These Terms and Conditions ("Terms") constitute a legally binding agreement between you ("User", "you", or "your") and NyumbaLink Limited ("NyumbaLink", "we", "us", or "our"), a company incorporated under the Companies Act, 2015 of the Laws of Kenya. These Terms govern your access to and use of the NyumbaLink web application, mobile applications, APIs, and associated services (collectively, the "Platform"). By accessing, browsing, registering, or listing on the Platform, you acknowledge that you have read, understood, and agreed to be bound by these Terms and our Privacy Policy. If you do not agree to these Terms, you must immediately cease all use of the Platform.""",
+    ),
+    (
+        "2. Platform Scope and Regulatory Disclosures",
+        """NyumbaLink operates exclusively as an online listing aggregator and information exchange platform connecting property seekers, landlords, real estate agents, property managers, and property sellers across Kenya. 
 
+In accordance with the Consumer Protection Act, 2012 (No. 46 of 2012):
+(a) NyumbaLink is NOT a licensed real estate agency, property management firm, land valuer, conveyancer, or financial institution under Kenyan law.
+(b) NyumbaLink does not hold legal title to, leasehold interest in, or custody of any properties displayed on the Platform.
+(c) The display of a property listing on the Platform does not constitute an endorsement, official verification, valuation, or structural guarantee by NyumbaLink Limited.""",
+    ),
+    (
+        "3. Eligibility and Legal Capacity",
+        """By creating an account or interacting with the Platform, you represent and warrant that:
+(a) You are at least eighteen (18) years of age and possess full legal capacity to enter into binding contracts under the Law of Contract Act (Cap 23, Laws of Kenya).
+(b) If registering or acting on behalf of a corporate body, partnership, or trust, you hold express legal authority to bind that entity to these Terms.
+(c) Your use of the Platform does not violate any applicable Kenyan laws, regulations, or third-party rights.""",
+    ),
+    (
+        "4. Property Listings and Representation Warranties",
+        """Landlords, sellers, agents, and listing agents ("Publishers") bear sole, strict legal responsibility for the truthfulness and accuracy of all submitted listings. Every Publisher expressly warrants that:
+(a) They possess verified legal title, power of attorney, valid agency authorization, or tenancy management mandates required under the Land Act, 2012 and Land Registration Act, 2012 to list, market, lease, or sell the specified property.
+(b) All property details—including but not limited to rent/sale prices, location data, total/available units, amenities, square footage, encumbrances, and photographic representations—are current, exact, and not deceptive or fraudulent.
+(c) Property images uploaded are true, unmanipulated representations of the actual physical premises.""",
+    ),
+    (
+        "5. Independent Due Diligence and Verification Disclaimer",
+        """While NyumbaLink reserves the right to review, moderate, request proof of title/mandate, or take down non-compliant listings, we perform no formal conveyancing, official registry searches (Ministry of Lands / ArdhiSaasa), or physical structural inspections. 
+
+Property seekers are strictly advised to independently conduct all standard legal due diligence prior to executing agreements or transferring funds, including:
+(a) Inspecting official green cards/search certificates at the relevant Land Registry or via ArdhiSaasa.
+(b) Conducting physical site visits to verify unit availability and structural safety.
+(c) Verifying the identity and legitimacy of the landlord, seller, or registered estate agent.""",
+    ),
+    (
+        "6. Direct Transactions and Disclaimer of Agency",
+        """All lease agreements, tenancy contracts, sale agreements, booking deposits, or monetary transactions negotiated via the Platform occur strictly and directly between the respective users. 
+
+(a) NyumbaLink is not a party to, third-party beneficiary of, or guarantor for any transaction or dispute arising out of interactions initiated on the Platform.
+(b) NyumbaLink strictly disclaims liability for any advance payments, holding deposits, agency fees, or rental sums paid directly to Publishers or third parties.""",
+    ),
+    (
+        "7. Fees, Paid Features, and Financial Terms",
+        """(a) Standard browsing and basic property listing submission flows are provided free of charge or at fees clearly indicated on the Platform.
+(b) NyumbaLink reserves the right to introduce optional premium services, featured placement fees, or subscription tiers. All fees, billing structures, and non-refundable terms will be explicitly disclosed to you prior to authorization.
+(c) All payments processed through integrated payment gateways (e.g., M-PESA, credit/debit cards) are governed by the respective payment processor’s terms.""",
+    ),
+    (
+        "8. User Accounts, Credentials, and Security",
+        """(a) You are responsible for maintaining the strict confidentiality of your login credentials, phone numbers, and authentication tokens.
+(b) You assume total legal responsibility for all activities, messages, and listings originated under your account.
+(c) You agree to notify NyumbaLink immediately via official channels upon detecting any unauthorized access, breach, or compromise of your account.""",
+    ),
+    (
+        "9. Prohibited Conduct and System Integrity",
+        """Pursuant to the Computer Misuse and Cybercrimes Act, 2018 (No. 5 of 2018), users strictly agree NOT to:
+(a) Publish false, fraudulent, misleading, deceptive, defamatory, or unlawful property listings.
+(b) Misrepresent identity, impersonate third parties, or fake land/property ownership or agency mandates.
+(c) Scrape, harvest, extract, or mine data, phone numbers, images, or user details automatically or manually without prior written consent.
+(d) Introduce viruses, Trojans, malware, or execute denial-of-service attacks against the Platform infrastructure.
+(e) Bypassing authentication or probing system vulnerabilities.""",
+    ),
+    (
+        "10. Communication Guidelines and Risk Warnings",
+        """(a) Contact features (direct phone calls, emails, or WhatsApp shortcuts) are supplied to facilitate genuine real estate inquiries.
+(b) Users must exercise caution when communicating with unknown persons and should never remit funds (e.g., viewing fees, reservation deposits) prior to physical verification and execution of formal legal documentation.
+(c) NyumbaLink accepts no responsibility for off-platform communications or fraudulent solicitations conducted via third-party messaging apps.""",
+    ),
+    (
+        "11. Third-Party Integrations and External Links",
+        """The Platform may embed links, maps, communications links, or external tools (such as WhatsApp, Google Maps, or payment gateways). Such integrations are operated by independent third parties under their respective terms. NyumbaLink exerts no operational control over, and expressly disclaims liability for, the availability, privacy practices, accuracy, or safety of external services.""",
+    ),
+    (
+        "12. Intellectual Property Rights",
+        """All software code, database design, user interfaces, branding, domain names, service marks, copy, graphics, and visual elements on the Platform are the exclusive intellectual property of NyumbaLink Limited, protected under the Copyright Act (Cap 130, Laws of Kenya) and the Trade Marks Act (Cap 506, Laws of Kenya). Unauthorized reproduction, extraction, reverse engineering, or commercial exploitation is strictly prohibited.""",
+    ),
+    (
+        "13. User-Submitted Content and Licensing",
+        """By submitting property photos, text descriptions, media, or listings to NyumbaLink:
+(a) You grant NyumbaLink Limited a perpetual, royalty-free, worldwide, non-exclusive license to host, index, display, resize, distribute, format, and re-transmit such content for platform operation, syndication, and marketing purposes.
+(b) You confirm that you possess all necessary copyright licenses and property consent releases for media uploaded.""",
+    ),
+    (
+        "14. Privacy and Data Protection Compliance",
+        """NyumbaLink processes personal data in strict compliance with the Data Protection Act, 2019 (No. 24 of 2019) and the Data Protection (General) Regulations, 2021.
+(a) By using the Platform, you consent to the collection, processing, and lawful disclosure of your personal data (such as contact info, listing metadata) necessary for real estate connectivity.
+(b) Details regarding your rights as a data subject (access, correction, erasure, objection) are set out in our Privacy Policy.""",
+    ),
+    (
+        "15. Service Availability and Operational Disclaimers",
+        """The Platform is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, express or implied. NyumbaLink does not guarantee that access to the site will be uninterrupted, error-free, timely, secure, or free from server outages, maintenance downtime, or cyber-attacks.""",
+    ),
+    (
+        "16. Limitation of Liability",
+        """To the maximum extent permitted by Kenyan law, NyumbaLink Limited, its directors, officers, employees, agents, and affiliates shall NOT be liable for any direct, indirect, incidental, punitive, special, or consequential damages, including but not limited to:
+(a) Loss of money, deposits, rental sums, or purchase funds paid to fraudulent landlords/sellers.
+(b) Inaccuracies, typographical errors, or misrepresentations in property listings.
+(c) Physical injuries, trespass claims, or contractual disputes occurring during property visits or tenancies.
+(d) Loss of data, server downtime, or cyber breaches beyond our reasonable control.""",
+    ),
+    (
+        "17. Indemnification",
+        """You agree to defend, indemnify, and hold harmless NyumbaLink Limited, its directors, employees, and agents from and against all legal claims, liabilities, costs, losses, damages, or expenses (including legal fees) arising from:
+(a) Your breach of these Terms or applicable laws.
+(b) Misleading, unlawful, or fraudulent content submitted by you.
+(c) Disputes between you and any landlord, seller, tenant, or buyer.""",
+    ),
+    (
+        "18. Account Suspension, Listing Removal, and Termination",
+        """NyumbaLink reserves the absolute right, without prior notice or liability, to edit, decline, flag, suspend, or permanently remove any property listing, user account, or platform access if we suspect:
+(a) Fraudulent activity, false advertising, or identity misrepresentation.
+(b) Violation of the Data Protection Act, 2019 or Cybercrimes Act, 2018.
+(c) Repeated user complaints or breach of these Terms.""",
+    ),
+    (
+        "19. Amendments to Terms",
+        """NyumbaLink Limited reserves the right to modify or revise these Terms at any time. Updated versions will be published on the Platform with a updated "Effective Date". Your continued use of the Platform after such changes constitute binding acceptance of the modified Terms.""",
+    ),
+    (
+        "20. Governing Law, Dispute Resolution, and Jurisdiction",
+        """(a) Governing Law: These Terms are governed by and construed in accordance with the Laws of the Republic of Kenya.
+(b) Informal Resolution: In the event of any dispute or claim arising out of these Terms, parties shall first endeavor in good faith to resolve the matter informally through written negotiation.
+(c) Formal Proceedings: Where informal negotiations fail within thirty (30) days, the dispute shall be submitted to the exclusive jurisdiction of the competent courts of the Republic of Kenya.""",
+    ),
+    (
+        "21. Contact Information and Complaints",
+        """For notices, legal inquiries, data protection requests, or listing reporting complaints, please reach out to NyumbaLink Limited through our official support desk:
+
+NyumbaLink Limited
+Nairobi, Kenya
+Email: support@nyumbalink.co.ke / legal@nyumbalink.co.ke""",
+    ),
+]
 story = [
     Paragraph("NYUMBALINK LIMITED", styles["TitleNL"]),
     Paragraph("TERMS AND CONDITIONS", styles["TitleNL"]),

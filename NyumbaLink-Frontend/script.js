@@ -202,6 +202,14 @@ function renderProperties(properties) {
 
       const price = Number(property.price || 0).toLocaleString();
 
+      const availableUnits = property.available_units !== undefined && property.available_units !== null
+        ? Number(property.available_units)
+        : 0;
+
+      const ownerName = escapeHtml(property.owner_name || "Landlord");
+      const ownerPhone = escapeHtml(property.owner_phone || "Not provided");
+      const ownerEmail = escapeHtml(property.owner_email || "Not provided");
+
       const imageHtml = property.image_url
         ? `
           <img
@@ -214,40 +222,71 @@ function renderProperties(properties) {
         : "";
 
       return `
-        <article class="property-card">
-          ${imageHtml}
+            <article class="property-card">
 
-          <div class="property-card-body">
-            <h3>${title}</h3>
+              <div class="property-image-wrap">
+                ${imageHtml}
+                <span class="property-purpose-badge">
+                  ${purpose === "rent" ? "For rent" : "Land for sale"}
+                </span>
+              </div>
 
-            <p class="property-location">
-              ${propertyTown}${propertyTown && propertyCounty ? ", " : ""}${propertyCounty}
-            </p>
+              <div class="property-card-body">
 
-            <strong class="property-price">
-              KES ${price}
-            </strong>
+                <div class="property-card-top">
+                  <h3>${title}</h3>
+                </div>
 
-            <small class="property-type">
-              ${propertyType}
-            </small>
+                <p class="property-location">
+                  <span class="location-icon">⌖</span>
+                  ${propertyTown}${propertyTown && propertyCounty ? ", " : ""}${propertyCounty}
+                </p>
 
-            <small class="property-purpose">
-              ${purpose === "rent" ? "For rent" : "Land for sale"}
-            </small>
+                <div class="property-card-details">
 
-            ${
-              description
-                ? `<p class="property-description">${description}</p>`
-                : ""
-            }
-          </div>
-        </article>
+                  <strong class="property-price">
+                    KES ${price}
+                  </strong>
+
+                  <span class="property-type">
+                    ${propertyType}
+                  </span>
+
+                </div>
+
+                <div class="property-units">
+                  <span class="available">
+                    ${availableUnits} ${availableUnits === 1 ? "unit" : "units"} left
+                  </span>
+                </div>
+
+                ${
+                  description
+                    ? `<p class="property-description">${description}</p>`
+                    : ""
+                }
+
+                <div class="property-actions">
+                  <!-- 🔹 Added type="button" to prevent default form submission -->
+                  <button 
+                    type="button"
+                    class="green-btn chat-owner-btn"
+                    data-owner-name="${ownerName}"
+                    data-owner-phone="${ownerPhone}"
+                    data-owner-email="${ownerEmail}"
+                    data-property-title="${title}"
+                  >
+                    Chat Owner
+                  </button>
+                </div>
+
+              </div>
+
+            </article>
       `;
     })
     .join("");
-}
-
+} // 🔹 Added missing closing brace for renderProperties()
 /*
 |--------------------------------------------------------------------------
 | Search form
@@ -367,6 +406,8 @@ async function submitListing(event) {
   const priceValue = Number(data.get("price"));
   const description = data.get("description")?.trim() || null;
   const imageUrl = data.get("image_url")?.trim() || null;
+  const totalUnits = Number(data.get("total_units"));
+  const availableUnits = Number(data.get("available_units"));
 
   /*
   |--------------------------------------------------------------------------
@@ -389,6 +430,21 @@ async function submitListing(event) {
     return;
   }
 
+  if (!Number.isInteger(totalUnits) || totalUnits < 1) {
+    alert("Number of units must be at least 1.");
+    return;
+  }
+
+  if (!Number.isInteger(availableUnits) || availableUnits < 0) {
+    alert("Available units cannot be negative.");
+    return;
+  }
+
+  if (availableUnits > totalUnits) {
+    alert("Available units cannot be greater than the total number of units.");
+    return;
+  }
+
   const submitButton = form.querySelector('button[type="submit"]');
   const originalButtonText = submitButton
     ? submitButton.textContent
@@ -408,10 +464,10 @@ async function submitListing(event) {
       town: townValue,
       price: priceValue,
       description,
-      image_url: imageUrl
+      image_url: imageUrl,
+      total_units: totalUnits,
+      available_units: availableUnits
     };
-
-    console.log("Submitting property:", payload);
 
     const response = await fetch(`${API_BASE}/api/properties`, {
       method: "POST",
@@ -510,7 +566,7 @@ function escapeHtml(value = "") {
 
 /*
 |--------------------------------------------------------------------------
-| Modal interactions
+| Event listeners & Modal interactions
 |--------------------------------------------------------------------------
 */
 
@@ -533,9 +589,15 @@ document.addEventListener("keydown", event => {
   }
 });
 
+// Bind property submission form dynamically
+const postPropertyForm = document.getElementById("postPropertyForm");
+if (postPropertyForm) {
+  postPropertyForm.addEventListener("submit", submitListing);
+}
+
 /*
 |--------------------------------------------------------------------------
-| Initial property loading
+| Initial property loading & Event Listeners
 |--------------------------------------------------------------------------
 */
 
@@ -543,4 +605,63 @@ window.addEventListener("DOMContentLoaded", () => {
   loadProperties().catch(error => {
     console.error("Initial property loading failed:", error);
   });
+});
+
+// Open owner modal handler
+document.addEventListener("click", function (event) {
+  const btn = event.target.closest(".chat-owner-btn");
+  if (!btn) return;
+
+  event.preventDefault();
+  event.stopPropagation();
+
+  const { ownerName, ownerPhone, ownerEmail, propertyTitle } = btn.dataset;
+  const modal = document.getElementById("ownerModalBackdrop");
+  if (!modal) return;
+
+  const titleEl = document.getElementById("modalPropertyTitle");
+  if (titleEl) titleEl.textContent = propertyTitle || "";
+
+  const nameEl = document.getElementById("modalOwnerName");
+  if (nameEl) nameEl.textContent = ownerName || "";
+
+  const phoneEl = document.getElementById("modalOwnerPhoneLink");
+  if (phoneEl) {
+    phoneEl.textContent = ownerPhone || "";
+    phoneEl.href = ownerPhone && ownerPhone !== "Not provided" ? `tel:${ownerPhone}` : "#";
+  }
+
+  const emailEl = document.getElementById("modalOwnerEmailLink");
+  if (emailEl) {
+    emailEl.textContent = ownerEmail || "";
+    emailEl.href = ownerEmail && ownerEmail !== "Not provided" ? `mailto:${ownerEmail}` : "#";
+  }
+
+  const waBtn = document.getElementById("whatsappBtn");
+  if (waBtn) {
+    const cleanPhone = (ownerPhone || "").replace(/[^0-9]/g, "");
+    if (cleanPhone) {
+      waBtn.href = `https://wa.me/${cleanPhone}?text=${encodeURIComponent('Hi, I am interested in your property: ' + (propertyTitle || ""))}`;
+      waBtn.style.display = "flex";
+    } else {
+      waBtn.style.display = "none";
+    }
+  }
+
+  modal.classList.add("open");
+
+  if (window.getComputedStyle(modal).display === "none") {
+    modal.style.display = "flex";
+  }
+});
+
+// Close owner modal handler
+document.addEventListener("click", function (event) {
+  const modal = document.getElementById("ownerModalBackdrop");
+  if (!modal) return;
+
+  if (event.target.id === "closeOwnerModal" || event.target === modal) {
+    modal.classList.remove("open");
+    modal.style.display = "";
+  }
 });

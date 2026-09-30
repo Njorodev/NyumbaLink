@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Rounded Background -->
+  <rect width="64" height="64" rx="16" fill="#1a365d"/>
+  
+  <!-- Modern Stylized House Roof & Link Dot -->
+  <path d="M16 34L32 18L48 34" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M22 34V46C22 47.1 22.9 48 24 48H40C41.1 48 42 47.1 42 46V34" stroke="#ffffff" stroke-width="5" stroke-linecap="round" fill="none"/>
+  
+  <!-- Green Link Accent -->
+  <circle cx="32" cy="38" r="5" fill="#22c55e"/>
+</svg>
