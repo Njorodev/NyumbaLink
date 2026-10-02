@@ -14,6 +14,7 @@ greenlet==3.5.5
 h11==0.16.0
 httptools==0.8.0
 idna==3.19
+libsql-experimental==0.0.55
 Mako==1.4.3
 MarkupSafe==3.0.3
 passlib==1.7.4
