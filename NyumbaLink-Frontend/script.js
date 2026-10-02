@@ -470,7 +470,7 @@ async function submitListing(event) {
       available_units: availableUnits
     };
 
-    const response = await fetch(`${API_BASE}/api/properties`, {
+    const response = await fetch(`${API_API}/api/properties`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
