@@ -30,8 +30,7 @@ reportlab==5.0.1
 rsa==4.9.1
 six==1.17.0
 SQLAlchemy==2.0.43
-sqlalchemy-libsql
-hrana-client
+sqlalchemy-libsql==0.0.55
 starlette==0.47.3
 typing-inspection==0.4.4
 typing_extensions==4.16.0
