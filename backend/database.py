@@ -6,8 +6,8 @@ TURSO_DATABASE_URL = os.getenv("TURSO_DATABASE_URL")
 TURSO_AUTH_TOKEN = os.getenv("TURSO_AUTH_TOKEN")
 
 if TURSO_DATABASE_URL and TURSO_AUTH_TOKEN:
-    # Ensure URL protocol starts with sqlite+libsql://
-    url_body = TURSO_DATABASE_URL.replace("libsql://", "").replace("https://", "")
+    # Format: sqlite+libsql://<your-db-name>.turso.io?authToken=<token>&secure=true
+    url_body = TURSO_DATABASE_URL.replace("libsql://", "").replace("https://", "").rstrip("/")
     DATABASE_URL = f"sqlite+libsql://{url_body}?authToken={TURSO_AUTH_TOKEN}&secure=true"
     
     engine = create_engine(
