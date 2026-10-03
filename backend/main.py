@@ -22,8 +22,8 @@ app.add_middleware(
         "http://127.0.0.1:8080", 
         "http://localhost:8080",
         "https://nyumbalink-sl7r.onrender.com",
-        "https://nyumbalink-backend.vercel.app",  # Your backend domain if making self-requests
-        "*"  # Allows access from any origin (or specify your custom frontend Vercel URL)
+        "https://nyumbalink-backend.vercel.app"  # Your backend domain if making self-requests
+        
     ],
     allow_credentials=True,
     allow_methods=["*"],

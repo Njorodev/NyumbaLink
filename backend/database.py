@@ -2,16 +2,19 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-# Retrieve environment variables
 TURSO_DATABASE_URL = os.getenv("TURSO_DATABASE_URL")
 TURSO_AUTH_TOKEN = os.getenv("TURSO_AUTH_TOKEN")
 
-# Use Turso if deployed on Vercel/configured with credentials; fallback to local SQLite for dev
 if TURSO_DATABASE_URL and TURSO_AUTH_TOKEN:
-    # Convert 'libsql://' or 'https://' to SQLAlchemy's sqlite + libsql format
+    # Format Turso URL with libsql protocol
     url_body = TURSO_DATABASE_URL.replace("libsql://", "").replace("https://", "")
     DATABASE_URL = f"sqlite+libsql://{url_body}?authToken={TURSO_AUTH_TOKEN}&secure=true"
-    engine = create_engine(DATABASE_URL)
+    
+    # Disable thread checking for serverless environments
+    engine = create_engine(
+        DATABASE_URL,
+        connect_args={"check_same_thread": False}
+    )
 else:
     DATABASE_URL = "sqlite:///./nyumbalink.db"
     engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
