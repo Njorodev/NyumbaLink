@@ -30,11 +30,11 @@ reportlab==5.0.1
 rsa==4.9.1
 six==1.17.0
 SQLAlchemy==2.0.43
-sqlalchemy-libsql==0.2.0starlette==0.47.3
+sqlalchemy-libsql==0.2.0
+starlette==0.47.3
 typing-inspection==0.4.4
 typing_extensions==4.16.0
 uvicorn==0.35.0
 uvloop==0.22.1
 watchfiles==1.2.0
 websockets==17.1
-libsql-experimental==0.0.55
